@@ -20,8 +20,8 @@ const dataSet = await FileAttachment("./data/spotify-2023.csv").csv({typed: true
 view(Inputs.table(dataSet));
 
 ```
-# Visao Geral
+# Observações
 
-É relevante observar que o Spotify afirma possuir mais de 40 milhões de músicas disponíveis para os usuários em seu aplicativo. No conjunto de dados analisado, encontram-se as 949 músicas mais ouvidas. Portanto, ao examinar os dados deste conjunto, devemos considerar que são, de longe, as músicas mais populares do aplicativo. 
+É relevante observar que o Spotify afirma possuir mais de 100 milhões de músicas disponíveis para os usuários em seu aplicativo. No conjunto de dados analisado, encontram-se as 949 músicas mais ouvidas. Portanto, ao examinar os dados deste conjunto, devemos considerar que são, de longe, as músicas mais populares do aplicativo. 
 
 
