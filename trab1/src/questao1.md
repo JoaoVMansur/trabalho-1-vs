@@ -3,7 +3,7 @@
 <br>
 <br>
 
-``# Análise 1: mês de lançamento das músicas.
+# Análise 1: mês de lançamento das músicas.
 Para iniciar, realizamos um filtro para considerar apenas as músicas com mais de um bilhão de streams separando assim as musicas mais ouvidas entre as mais ouvidas.
 
 ```js
@@ -80,7 +80,7 @@ Apesar disso, essa visualização nos permite formular uma hipótese inicial sob
 ## Conclusão
 Portanto, combinando as análises fornecidas pela visualização, podemos hipotetizar que músicas com características mais dançantes, produzidas por apenas um artista e lançadas nos meses de janeiro ou maio, podem ter maior probabilidade de se tornarem populares. Esses meses podem ser estratégicos devido a fatores como menor concorrência de lançamentos ou alinhamento com eventos sazonais.
 
-É claro que, para uma hipótese mais robusta, outros aspectos também deveriam ter sido levados em consideração, como os gêneros musicais, a qualidade da produção e a eficácia das estratégias de marketing. Esses elementos podem interagir de maneiras complexas e influenciar a popularidade de uma música de maneira significativa.``
+É claro que, para uma hipótese mais robusta, outros aspectos também deveriam ter sido levados em consideração, como os gêneros musicais, a qualidade da produção e a eficácia das estratégias de marketing. Esses elementos podem interagir de maneiras complexas e influenciar a popularidade de uma música de maneira significativa.
 
 ## Design utilizados
 Nesta pergunta, utilizamos dois tipos de gráficos: o gráfico de barras e o gráfico de dispersão (scatterplot). Para as análises 1 e 2, optamos por utilizar apenas gráficos de barras, pois esses são ideais para comparar dados categóricos, como os meses de lançamento das músicas e a quantidade de artistas envolvidos na criação de cada música. Os gráficos de barras permitem uma representação clara das contagens ou frequências de cada categoria, facilitando a visualização de padrões e discrepâncias. Para os marcadores, meses de lançamento e o número de artistas envolvidos em cada música são representados por barras verticais azuis. Quanto aos canais visuais, a altura das barras indica a quantidade de músicas em cada categoria, enquanto o eixo x representa as categorias e o eixo y representa a contagem ou número de músicas.
