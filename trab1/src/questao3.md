@@ -31,19 +31,21 @@ A predominância avassaladora de playlists no Spotify é notável. Essa tendênc
 
 Além disso, quando analisamos os dados da Apple, observamos que, embora seja menos popular que o Spotify, a diferença de popularidade entre as duas plataformas não parece tão exagerada quanto o retratado nos dados. Isso sugere que, enquanto o Spotify continua a ser líder em termos de criação de playlists, a posição relativa das outras plataformas pode estar sub-representada ou mal interpretada no conjunto de dados atual. Portanto, é importante abordar essa disparidade com cautela e considerar o contexto mais amplo ao interpretar os resultados desta análise.
 
-<div class="grid grid-cols-2">
-    <div id="posicaoCharts" class="card grid-colspan-2">
-        <h2 class="title">quantidade de músicas lançadas x mês</h2>
-        <div style="width: 100%; margin-top: 15px;">
-            ${vl.render(posicaoCharts(divWidth - 200))}
-        </div>
-    </div>
-</div>
+
 
 
 # Análise 2:
 
 
+
+<div class="grid grid-cols-2">
+    <div id="allCharts" class="card grid-colspan-2">
+        <h2 class="title">quantidade de músicas lançadas x mês</h2>
+        <div style="width: 100%; margin-top: 15px;">
+            ${vl.render(allCharts(divWidth - 200))}
+        </div>
+    </div>
+</div>
 
 ```js
   
@@ -87,42 +89,58 @@ function totalPlaylist(divWidth) {
 }
 
 let top10 = dataSet.slice(0,10);
-console.log(top10);
 
-let posicaoChart = top10.map((musica, index) => ({
+let allChart = top10.map((musica, index) => ({
+    chartDeezer: musica.in_deezer_charts,
+    chartShazam: musica.in_shazam_charts,
+    chartApple: musica.in_apple_charts,
+    chartSpotify: musica.in_spotify_charts,
     posicaoTop10: index + 1,
-    spotify: musica.in_spotify_charts,
-    apple: musica.in_apple_charts,
-    deezer: musica.in_deezer_charts,
-    shazam: musica.in_shazam_charts
 }));
 
-let jsonData = JSON.stringify({ "values": posicaoChart });
-
-console.log(jsonData)
-
-function posicaoCharts(divWidth) {
+function allCharts(divWidth) {
     return {
         spec: {
             width: divWidth,
-            data: {values: posicaoChart},
-            mark: "bar",
-            encoding: {
-                x: {field: "posicaoTop10", type: "quantitative", title: "Posição Top 10"},
-                y: {aggregate: "count", type: "quantitative", title: "Quantidade"},
-                color: {
-                    field: "Plataforma",
-                    type: "nominal",
-                    scale: {
-                        domain: ["spotify", "apple", "deezer", "shazam"],
-                        range: ["#1DB954", "#c7c7c7", "#aec7e8", "#1f77b4"]
+            data: {
+                values: allChart
+            },
+            repeat: { "layer": ["chartSpotify", "chartApple", "chartDeezer", "chartShazam"] },
+            spec: {
+                "mark": "bar",
+                "encoding": {
+                    "x": {
+                        "field": "posicaoTop10",
+                        "type": "ordinal",
+                        "bandwidth": 10.8 // Ajuste o valor conforme desejado para aumentar o espaço entre as barras
                     },
-                    title: "Plataforma"
+                    "y": {
+                        "aggregate": "sum",
+                        "field": { "repeat": "layer" },
+                        "type": "ordinal",
+                        "title": "Posicao no Chart"
+                    },
+                    "color": { "datum": { "repeat": "layer" }, "title": "Streaming Chart" },
+                    "xOffset": { "datum": { "repeat": "layer" } }
+                },
+                "config": {
+                    "mark": { "invalid": null },
+                    "scale": { "y": { "zero": true } },
+                    "axis": { "title": "Título da Legenda Lateral" }
                 }
             }
         }
     };
 }
+
+
+
+
+
+
+
+
+
 
 
 

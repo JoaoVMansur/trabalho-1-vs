@@ -187,7 +187,10 @@ function graficoMes(divWidth) {
                 "y": {
                     "field": "ocorrencia",
                     "type": "quantitative",
-                }
+                },
+                color:{
+                    field: "ocorrencia"
+                },
             }
         }
     };
@@ -210,7 +213,10 @@ function graficoMesTotal(divWidth) {
                 "y": {
                     "field": "ocorrencia",
                     "type": "quantitative",
-                }
+                },
+                color:{
+                    field: "ocorrencia",
+                },
             }
         }
     };
@@ -223,22 +229,28 @@ function graficoArtistCount(divWidth) {
             data: {
                 values: artistCountOcorrencia
             },
-            "mark": {
-                "type": "bar"
+            mark: {
+                type: "bar"
             },
-            "encoding": {
-                "x": {
-                    "field": "qtd",
-                    "type": "nominal",
+            encoding: {
+                x: {
+                    field: "qtd",
+                    type: "nominal",
                 },
-                "y": {
-                    "field": "ocorrencia",
-                    "type": "quantitative",
+                y: {
+                    field: "ocorrencia",
+                    type: "quantitative",
+                },
+                color: {
+                    field: "qtd",
+                    type: "nominal", // Assuming qtd is a categorical variable
+                    scale: {scheme: "category10"} // You can choose a color scheme here
                 }
             }
         }
     };
 }
+
 function graficoPositividadeDancabilidade(divWidth) {
     return {
         spec: {
@@ -258,7 +270,8 @@ function graficoPositividadeDancabilidade(divWidth) {
                 "y": {
                     "field": "positividade",
                     "type": "quantitative"
-                }
+                },
+
             }
         }
     };
