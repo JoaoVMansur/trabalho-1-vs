@@ -73,7 +73,7 @@ Ao analisar os dados de posicionamento nos charts, observamos que apenas a plata
 Esse padrão intrigante, evidenciado pelo gráfico, sugere uma variedade de possíveis explicações, porém, especulamos que esteja relacionado ao mesmo problema discutido na análise anterior. Dado que este conjunto de dados se concentra no Spotify, é plausível que as informações referentes a outras plataformas não sejam tão confiáveis. Esta discrepância pode surgir de diferenças na metodologia de coleta de dados entre as plataformas, inconsistências na disponibilidade ou precisão das informações fornecidas ou até mesmo variações na integridade dos conjuntos de dados utilizados. Considerando isso, é crucial proceder com cautela ao interpretar os dados e considerar as limitações inerentes à sua fonte e qualidade.
 
 
-# Desing utilizados
+# Desings utilizados
 
 Nesta pergunta, empregamos dois tipos de gráficos: o gráfico de barras compactado e o gráfico de pizza
 
