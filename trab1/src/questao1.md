@@ -83,7 +83,7 @@ Portanto, combinando as análises fornecidas pela visualização, podemos hipote
 É claro que, para uma hipótese mais robusta, outros aspectos também deveriam ter sido levados em consideração, como os gêneros musicais, a qualidade da produção e a eficácia das estratégias de marketing. Esses elementos podem interagir de maneiras complexas e influenciar a popularidade de uma música de maneira significativa.
 
 ## Designs utilizados
-Nesta pergunta, utilizamos dois tipos de gráficos: o gráfico de barras e o gráfico de dispersão (scatterplot). Para as análises 1 e 2, optamos por utilizar apenas gráficos de barras, pois esses são ideais para comparar dados categóricos, como os meses de lançamento das músicas e a quantidade de artistas envolvidos na criação de cada música. Os gráficos de barras permitem uma representação clara das contagens ou frequências de cada categoria, facilitando a visualização de padrões e discrepâncias. Para os marcadores, meses de lançamento e o número de artistas envolvidos em cada música são representados por barras verticais azuis. Quanto aos canais visuais, a altura das barras indica a quantidade de músicas em cada categoria, enquanto o eixo x representa as categorias e o eixo y representa a contagem ou número de músicas.
+Nesta pergunta, utilizamos dois tipos de gráficos: o gráfico de barras e o gráfico de dispersão (scatterplot). Para as análises 1 e 2, optamos por utilizar apenas gráficos de barras, pois esses são ideais para comparar dados categóricos, como os meses de lançamento das músicas e a quantidade de artistas envolvidos na criação de cada música. Os gráficos de barras permitem uma representação clara das contagens ou frequências de cada categoria, facilitando a visualização de padrões e discrepâncias. Para os marcadores, meses de lançamento e o número de artistas envolvidos em cada música são representados por barras verticais coloridas. Quanto aos canais visuais, a altura das barras indica a quantidade de músicas em cada categoria, enquanto o eixo x representa as categorias e o eixo y representa a contagem ou número de músicas.
 
 No entanto, para a análise 3, que envolve o relacionamento entre duas variáveis contínuas, como a dançabilidade e a positividade das músicas, escolhemos utilizar um gráfico de dispersão. Este tipo de gráfico é mais adequado para mostrar a distribuição dos dados ao longo de duas dimensões e identificar correlações, agrupamentos ou padrões entre as variáveis. Queríamos investigar se as duas variáveis tinham alguma correlação, ou seja, se músicas mais dançantes e positivas seriam mais populares. Porém, apesar da hipótese ter falhado devido à positividade, como citado com mais detalhes na análise 3, ainda assim conseguimos obter bons resultados com essa visualização. Para os marcadores, cada ponto no gráfico representa uma única música. Já os canais visuais, as coordenadas (x,y) representam os valores de dançabilidade e positividade.
 
@@ -243,8 +243,8 @@ function graficoArtistCount(divWidth) {
                 },
                 color: {
                     field: "qtd",
-                    type: "nominal", // Assuming qtd is a categorical variable
-                    scale: {scheme: "category10"} // You can choose a color scheme here
+                    type: "nominal", 
+                    scale: {scheme: "category10"} 
                 }
             }
         }

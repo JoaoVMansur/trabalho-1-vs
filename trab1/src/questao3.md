@@ -161,7 +161,7 @@ function allCharts(divWidth) {
                     "x": {
                         "field": "nome",
                         "type": "ordinal",
-                        "bandwidth": 10.8 // Adjust the value as desired to increase the space between the bars
+                        "bandwidth": 10.8 
                     },
                     "y": {
                         "aggregate": "sum",
